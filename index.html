@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>前往 Terry Eric 的作品花園</title>
+    <style>
+      :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #34443b; color: #eee9dc; }
+      body { min-height: 100vh; display: grid; place-items: center; margin: 0; }
+      main { padding: 2rem; text-align: center; }
+      a { color: #e6c45d; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>正在前往 Terry Eric 的作品花園…</p>
+      <p><a id="destination" href="https://demo.terry878.org/">若沒有自動跳轉，請點這裡。</a></p>
+    </main>
+    <script>
+      const destination = new URL('https://demo.terry878.org/');
+      destination.pathname = location.pathname === '/' ? '/' : location.pathname;
+      destination.search = location.search;
+      destination.hash = location.hash;
+      document.getElementById('destination').href = destination.href;
+      location.replace(destination.href);
+    </script>
+  </body>
+</html>
